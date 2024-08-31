@@ -14,11 +14,14 @@ from data.mydataset import MyDS
 from utils.train_utils import get_model
 
 
+
+
 parser = argparse.ArgumentParser(description='PyTorch TML Evaluation')
 
 # Data configuration
 parser.add_argument('data', metavar='DIR', nargs='?', help='path to dataset')
 parser.add_argument('--save_dir', type=str, default="./save", help="path to save info")
+
 
 # Model configuration
 parser.add_argument('-a', '--arch', metavar='ARCH', default='uldc')
@@ -64,6 +67,8 @@ def evaluate(args):
         for i in range(output.shape[0]):
             output = trans(output[i])
             save_image(output, os.path.join(args.save_dir, low_path[0].split('/')[-1]))
+
+
 
 
     print(f'normal light images are saved in {args.save_dir}')
