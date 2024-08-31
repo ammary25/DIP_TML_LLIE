@@ -13,9 +13,9 @@ Code for the paper: ["Troublemaker Learning for Low-Light Image Enhancement"](ht
 ---
 
 ```bash
-torch == 1.7.1
-torchvision == 0.8.2
-timm == 0.6.13
+torch
+torchvision 
+timm 
 ```
 
 We use **python 3.7**. Higher version is possible, 
