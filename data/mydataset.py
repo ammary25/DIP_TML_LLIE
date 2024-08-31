@@ -7,6 +7,8 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 
 
+
+
 class MyDS(Dataset):
     def __init__(self, root, size=(400, 640)):
         self.size = size
@@ -14,6 +16,8 @@ class MyDS(Dataset):
 
     def __len__(self):
         return len(self.data_names)
+
+
 
     def __getitem__(self, idx):
         img_path = self.data_names[idx]
