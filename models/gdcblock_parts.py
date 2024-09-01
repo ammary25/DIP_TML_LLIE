@@ -6,6 +6,7 @@ from .unet_parts import *
 class SABlock(nn.Module):
     r"""
     Args:
+    
         in_shape (int): (H, W), height and width of input.
         dim (int): Number of input channels.
         ps (int): Patch size. H and W should be divisible by ps.
@@ -73,6 +74,8 @@ class LayerNorm(nn.Module):
             raise NotImplementedError
         self.normalized_shape = (normalized_shape,)
 
+
+    
     def forward(self, x):
         if self.data_format == "channels_last":
             return F.layer_norm(x, self.normalized_shape, self.weight, self.bias, self.eps)
@@ -116,6 +119,8 @@ class Down_SA(nn.Module):
         return self.maxpool_conv(x)
 
 
+
+
 class Up_SA(nn.Module):
 
     def __init__(self, in_channels, out_channels, in_shape, bilinear=True):
@@ -138,6 +143,7 @@ class Up_SA(nn.Module):
                         diffY // 2, diffY - diffY // 2])
         x = torch.cat([x2, x1], dim=1)
         return self.conv(x)
+
 
 
 class OutConv(nn.Module):
