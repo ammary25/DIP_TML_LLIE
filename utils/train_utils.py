@@ -18,6 +18,7 @@ def get_model(num_classes, name, ckpt=None, stem_channels=32):
     elif name == 'unet':
         model = UNet(n_channels=3, n_classes=num_classes)
 
+    
     elif name == 'unet_enhance':
         model = UNet_Enhance(n_channels=3, n_classes=num_classes)
 
