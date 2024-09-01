@@ -6,7 +6,6 @@ class UGDC(nn.Module):
         self.n_channels = n_channels
         self.n_classes = n_classes
         self.bilinear = bilinear
-
         self.inc = (DoubleConv(n_channels, 64))
         self.down1 = (Down(64, 128))
         self.down2 = (Down(128, 256))
@@ -19,6 +18,8 @@ class UGDC(nn.Module):
         self.up4 = (Up(128, 64, bilinear))
         self.outc = (OutConv(64, n_classes))
 
+
+    
     def forward(self, x):
         x1 = self.inc(x)
         x2 = self.down1(x1)
@@ -77,6 +78,7 @@ class UGDC_Enhance(nn.Module):
         logits = self.outc(x)
         return logits
 
+    
     def use_checkpointing(self):
         self.inc = torch.utils.checkpoint(self.inc)
         self.down1 = torch.utils.checkpoint(self.down1)
@@ -109,6 +111,7 @@ class UNet(nn.Module):
         self.up4 = (Up(128, 64, bilinear))
         self.outc = (OutConv(64, n_classes))
 
+    
     def forward(self, x):
         x1 = self.inc(x)
         x2 = self.down1(x1)
@@ -141,7 +144,6 @@ class UNet_Enhance(nn.Module):
         self.n_channels = n_channels
         self.n_classes = n_classes
         self.bilinear = bilinear
-
         self.inc = (DoubleConv(n_channels, 32))
         self.down1 = (Down(32, 64))
         self.down2 = (Down(64, 128))
@@ -154,6 +156,8 @@ class UNet_Enhance(nn.Module):
         self.up4 = (Up(64, 32, bilinear))
         self.outc = (OutConv(32, n_classes))
 
+
+    
     def forward(self, x):
         x1 = self.inc(x)
         x2 = self.down1(x1)
