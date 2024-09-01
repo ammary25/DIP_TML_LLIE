@@ -23,6 +23,8 @@ parser.add_argument('data', metavar='DIR', nargs='?', help='path to dataset')
 parser.add_argument('--save_dir', type=str, default="./save", help="path to save info")
 
 
+
+
 # Model configuration
 parser.add_argument('-a', '--arch', metavar='ARCH', default='uldc')
 parser.add_argument('--resume-Pred', default='', type=str, metavar='PATH',
@@ -54,6 +56,8 @@ def evaluate(args):
     model_Pred = get_model(3, 'ugdc', args.resume_Pred).to(device)
     model_Enhance = get_model(3, 'ugdc_enhance', args.resume_Enhance).to(device)
 
+
+  
     for low, low_path in dataloader:
         print(f'processing {low_path} ...')
 
@@ -70,6 +74,7 @@ def evaluate(args):
 
 
 
+  
 
     print(f'normal light images are saved in {args.save_dir}')
 
