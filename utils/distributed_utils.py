@@ -24,8 +24,10 @@ def get_rank():
     return dist.get_rank()
 
 
+
 def is_main_process():
     return get_rank() == 0
+
 
 
 def reduce_value(value, average=True):
@@ -39,6 +41,8 @@ def reduce_value(value, average=True):
             value /= world_size
 
         return value
+
+
 
 
 def cleanup():
