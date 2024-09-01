@@ -26,7 +26,7 @@ class SABlock(nn.Module):
             self.patch = nn.Conv2d(dim, dim, kernel_size=ps, stride=ps, groups=dim)
 
         self.ks = ks
-        self.lnnorm = LayerNorm(dim, eps=1e-6, data_format='channels_first')
+        self.lnnorm = LayerNorm(dim, eps=1e-7, data_format='channels_first')
         self.bias = nn.Parameter(torch.zeros(1))
         d = torch.normal(mean=0, std=1.0, size=(dim, h // ps, w // ps))
         self.diff = nn.Parameter(d)
@@ -82,6 +82,8 @@ class LayerNorm(nn.Module):
             x = (x - u) / torch.sqrt(s + self.eps)
             x = self.weight[:, None, None] * x + self.bias[:, None, None]
             return x
+
+
 
 
 class DoubleConv_SA(nn.Module):
