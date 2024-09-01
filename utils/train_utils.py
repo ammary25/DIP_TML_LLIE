@@ -3,9 +3,11 @@ import torch
 from models.UGDC import UGDC, UNet, UGDC_Enhance, UNet_Enhance
 
 
+
 def get_model(num_classes, name, ckpt=None, stem_channels=32):
     model_names = ['ugdc', 'unet', 'ugdc_enhance', 'unet_enhance']
 
+    
     if name not in model_names:
         raise NotImplementedError(f'model name should be one of: {model_names}, but got {name}.')
 
