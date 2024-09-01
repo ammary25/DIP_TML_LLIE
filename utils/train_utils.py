@@ -21,7 +21,8 @@ def get_model(num_classes, name, ckpt=None, stem_channels=32):
 
     elif name == 'ugdc_enhance':
         model = UGDC_Enhance(n_channels=3, n_classes=num_classes,
-                        in_shapes=[(400, 640), (200, 320), (100, 160), (50, 80), (25, 40)], stem_channels=stem_channels)
+                
+                             in_shapes=[(400, 640), (200, 320), (100, 160), (50, 80), (25, 40)], stem_channels=stem_channels)
 
     if ckpt:
         print(f'loading ckpt from {ckpt}...')
@@ -32,5 +33,6 @@ def get_model(num_classes, name, ckpt=None, stem_channels=32):
 
         model.load_state_dict(new_state_dict)
         model.eval()
+        
 
     return model
