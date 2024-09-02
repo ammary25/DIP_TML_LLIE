@@ -160,6 +160,7 @@ class UNet_Enhance(nn.Module):
         self.outc = (OutConv(32, n_classes))
 
 
+
     
     def forward(self, x):
         x1 = self.inc(x)
