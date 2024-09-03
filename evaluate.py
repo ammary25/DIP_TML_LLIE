@@ -15,11 +15,9 @@ from utils.train_utils import get_model
 
 parser = argparse.ArgumentParser(description='PyTorch TML Evaluation')
 
-
 # Data configuration
 parser.add_argument('data', metavar='DIR', nargs='?', help='path to dataset')
 parser.add_argument('--save_dir', type=str, default="./save", help="path to save info")
-
 
 # Model configuration
 parser.add_argument('-a', '--arch', metavar='ARCH', default='uldc')
@@ -53,7 +51,7 @@ def evaluate(args):
     model_Enhance = get_model(3, 'ugdc_enhance', args.resume_Enhance).to(device)
 
 
-  
+ 
     for low, low_path in dataloader:
         print(f'processing {low_path} ...')
 
