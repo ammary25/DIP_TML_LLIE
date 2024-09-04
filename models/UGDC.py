@@ -20,7 +20,6 @@ class UGDC(nn.Module):
         self.up4 = (Up(128, 64, bilinear))
         self.outc = (OutConv(64, n_classes))
 
-
     
     def forward(self, x):
         x1 = self.inc(x)
