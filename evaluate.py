@@ -51,7 +51,7 @@ def evaluate(args):
     model_Enhance = get_model(3, 'ugdc_enhance', args.resume_Enhance).to(device)
 
 
- 
+  
     for low, low_path in dataloader:
         print(f'processing {low_path} ...')
 
