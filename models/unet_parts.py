@@ -22,7 +22,7 @@ class DoubleConv(nn.Module):
     def forward(self, x):
         return self.double_conv(x)
 
-
+ 
 class Down(nn.Module):
 
     def __init__(self, in_channels, out_channels, down=2):
