@@ -58,7 +58,6 @@ class SABlock(nn.Module):
         return res
 
 
-
 class LayerNorm(nn.Module):
 
     def __init__(self, normalized_shape, eps=1e-6, data_format="channels_last"):
