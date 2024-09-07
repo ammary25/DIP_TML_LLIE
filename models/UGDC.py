@@ -1,5 +1,4 @@
 from .gdcblock_parts import *
-
 class UGDC(nn.Module):
 
     def __init__(self, n_channels, n_classes, in_shapes, bilinear=False):
