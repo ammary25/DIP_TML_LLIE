@@ -11,7 +11,6 @@ class SABlock(nn.Module):
         reduction (int): Channel reduction ratio.
         drop_path (float): Stochastic depth rate. Default: 0.2
     """
-
     def __init__(self, in_shape, dim, ps=7, ks=1, reduction=4, drop_path=0.2):
         super().__init__()
         if isinstance(in_shape, int):
