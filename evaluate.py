@@ -14,7 +14,7 @@ from utils.train_utils import get_model
 
 parser = argparse.ArgumentParser(description='PyTorch TML Evaluation')
    
-# Data configuration
+# Data configuration 
 parser.add_argument('data', metavar='DIR', nargs='?', help='path to dataset')
 parser.add_argument('--save_dir', type=str, default="./save", help="path to save info")
 
