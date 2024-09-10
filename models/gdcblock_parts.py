@@ -16,7 +16,7 @@ class SABlock(nn.Module):
         if isinstance(in_shape, int):
             h, w = in_shape, in_shape
             self.patch = nn.Conv2d(dim, dim, kernel_size=ps, stride=ps, groups=dim)
- 
+  
         else:
             h, w = in_shape[0], in_shape[1]
             ps = 5
