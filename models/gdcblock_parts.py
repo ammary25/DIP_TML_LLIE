@@ -4,7 +4,7 @@ class SABlock(nn.Module):
     r"""
     Args:
      
-        in_shape (int): (H, W), height and width of input.
+        in_shape  (int): (H, W), height and width of input.
         dim (int): Number of input channels.
         ps (int): Patch size. H and W should be divisible by ps.
         ks (int): Dynamic Conv kernel size. Default: 1
